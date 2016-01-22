@@ -7,11 +7,31 @@
 // it should have a "toString" method that returns it's stats as a string like:
 // 'Radius: 4, Circumference: 25.132741228718345, Area: 50.26548245743669'
 
+function Circle(radius) {
+  this.radius = radius;
+  this.circumference = 0;
+  this.area = 0;
+}
 
+Circle.prototype.getCircumference = function (radius) {
+  this.circumference = (2 * this.radius * Math.PI);
+  return this.circumference;
+}
 
+Circle.prototype.getArea = function (radius) {
+  this.area = (this.radius * this.radius * Math.PI);
+  return this.area;
+}
 
+Circle.prototype.toString = function (radius) {
+  var circleDetails = 'Radius: ' + this.radius + ', Circumference: ' + this.circumference + ', Area: ' + this.area;
+  return circleDetails;
+}
 
-
+var uj = new Circle(4);
+console.log(uj.getCircumference());
+console.log(uj.getArea());
+console.log(uj.toString());
 
 
 
